@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center mt-4 mb-4">
+  <h1>物件詳細</h1>
+  <div class="ml-auto buildings__linkBox">
+    <%= link_to '一覧', buildings_path, class: 'btn btn-outline-dark' %>
+    <%= link_to '編集', edit_building_path(@building), class: 'btn btn-outline-dark' %>
+  </div>
+</div>
+
+
+<% if flash[:notice] %>
+  <div class="alert alert-primary"><%= flash[:notice] %></div>
+<% end %>
+
+<%= render @building %> 
+
+
+

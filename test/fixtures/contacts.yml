@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: contacts
+#
+#  id          :integer          not null, primary key
+#  contact     :text
+#  respond     :text
+#  status      :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  building_id :integer
+#
+# Indexes
+#
+#  index_contacts_on_building_id  (building_id)
+#
+
+one:
+  building: one
+  contact: MyText
+  respond: MyText
+
+two:
+  building: two
+  contact: MyText
+  respond: MyText

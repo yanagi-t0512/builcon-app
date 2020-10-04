@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: buildings
+#
+#  id            :integer          not null, primary key
+#  customer_name :string
+#  property_name :string
+#  room_number   :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+one:
+  property_name: MyString
+  room_number: MyString
+  customer_name: MyString
+
+two:
+  property_name: MyString
+  room_number: MyString
+  customer_name: MyString

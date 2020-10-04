@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    attributes:
+      building:
+        property_name: 物件名
+        room_numb er: 部屋番号
+        customer_name: 入居者名
+      contact:
+        contact: お問合せ内容
+        respond: 回答内容
+        status: 対応状況
+  views:
+    pagination:
+      first: '最初'
+      last: '最後'
+      previous: '前'
+      next: '次'
+      truncate: '...'
+

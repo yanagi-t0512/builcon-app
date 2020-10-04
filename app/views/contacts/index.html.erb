@@ -1,0 +1,52 @@
+<div class="d-flex align-items-center">
+  <h2>問合せ一覧</h2>
+  <%# <div class="ml-auto contacts__linkBox">
+    <%= link_to '物件一覧へ', buildings_path, class: 'btn btn-outline-info' %>
+  <%# </div> %>
+  
+</div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-danger"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:error_messages] %>
+  <div class="alert alert-danger">
+    <ul>
+      <% flash[:error_messages].each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<table class="table table-sm table-hover contacts__table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>物件名</th>
+      <th>入居者名</th>
+      <th>お問合せ内容</th>
+      <th>回答内容</th>
+      <th>対応状況</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.id %></td>
+        <td><%= contact.building.property_name %></td>
+        <td><%= contact.building.customer_name %></td>
+        <td><%= contact.contact %></td>
+        <td><%= contact.respond %></td>
+        <td><%= contact.status %></td>
+        <td><%= link_to '詳細', contact, class: "btn btn-outline-dark" %></td>
+        <td><%= link_to '削除', contact, class: "btn btn-outline-dark", method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

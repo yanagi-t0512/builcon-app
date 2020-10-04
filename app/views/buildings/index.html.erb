@@ -1,0 +1,60 @@
+<div class="d-flex align-items-center">
+  <h1>物件一覧</h1>
+  <div class="ml-auto buildings__linkBox">
+    
+    <%= link_to '新規物件登録', new_building_path, class: 'btn btn-outline-success' %>
+  </div>
+    
+</div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-danger"><%= flash[:notice] %></div>
+<% end %>
+
+<div class="d-flex align-items-center"> 
+  <div class="buildings__searchForm">
+    <%= form_tag(buildings_path, :method => 'get' ) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '物件名で検索', :property_name => nil %>
+    <% end %>
+  </div>
+
+  <%# <div class="buildings__searchForm">
+    <%= form_tag(buildings_path, :method => 'get' ) do %>
+      <%# <%= text_field_tag :search %>
+      <%#  <%= submit_tag '入居者名で検索', :customer_name => nil %>
+    <%# <% end %>
+  <%# </div> %>
+
+</div>
+
+<table class="table table-sm table-hover buildings__table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>物件名</th>
+      <th>部屋番号</th>
+      <th>入居者名</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.id %></td>
+        <td><%= building.property_name %></td>
+        <td><%= building.room_number %></td>
+        <td><%= building.customer_name %></td>
+        <%# <td><%= link_to '問合わせ', new_contact_path(building), class: "btn btn-outline-primary" %>
+        <td><%= link_to '問合せ登録', "/contacts/new/#{building.id}", class: "btn btn-outline-primary" %>
+        <td><%= link_to '詳細', building, class: "btn btn-outline-dark" %></td>
+        <td><%= link_to '削除', building, class: "btn btn-outline-dark", method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @buildings %>
+

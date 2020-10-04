@@ -1,0 +1,13 @@
+<div class="d-flex align-items-center">
+  <h2>問合せ登録</h2>
+  <div class="ml-auto contacts__linkBox">
+    <%= link_to '問合せ一覧', contacts_path, class: 'btn btn-outline-info' %>
+  </div>
+</div>
+
+<div class="d-flex align-items-center">
+  <%= @building.property_name %>
+  <%= @building.room_number %>
+</div>
+
+<%= render partial: 'form', locals: { contact: @contact } %>

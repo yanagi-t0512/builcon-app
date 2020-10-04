@@ -1,0 +1,8 @@
+<div class="d-flex align-items-center">
+  <h1>物件登録</h1>
+  <div class="ml-auto buildings__linkBox">
+    <%= link_to '物件一覧', buildings_path, class: 'btn btn-outline-info' %>
+  </div>
+</div>
+
+<%= render partial: 'form', locals: { building: @building } %>
