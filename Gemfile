@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'sqlite3', '1.3.13'
+  gem 'rails-flog', require: 'flog'
 end
 
 group :development do

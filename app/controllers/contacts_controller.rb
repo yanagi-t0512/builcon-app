@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
     contact = Contact.new(contact_params)
     if contact.save
       flash[:notice] = "新規問合せを登録しました"
-      redirect_to contact
+      redirect_to contact.building
     else
       redirect_to contact, flash: {
       # redirect_to new_contact_path, flash: {
@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
-    # @building = Building.find(@contact.id)
+    
   end
 
   def edit

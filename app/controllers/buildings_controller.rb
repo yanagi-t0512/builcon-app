@@ -24,6 +24,9 @@ class BuildingsController < ApplicationController
 
   def show
     @building = Building.find(params[:id])
+    # @contact = @building.contacts.new
+    @contact = Contact.new(building_id: @building.id)
+    
   end
 
   def edit

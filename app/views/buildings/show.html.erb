@@ -13,5 +13,12 @@
 
 <%= render @building %> 
 
+<div class="p-contact__list">
+  <div class="p-contact__listTitle">お問合せ</div>
+  <%= render @building.contacts %>
+</div>
+
+<%= render partial: 'contacts/form', locals: { contact: @contact } %>
+
 
 

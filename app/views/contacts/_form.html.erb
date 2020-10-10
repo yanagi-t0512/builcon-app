@@ -1,17 +1,20 @@
-<%= form_for contact do |f| %>
-  <%= f.hidden_field :building_id, value: @building.id %>
-  <div class="form-group">
-    <%= f.label :contact, 'お問い合わせ' %>
-    <%= f.text_field :contact, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :respond, '回答内容' %>
-    <%= f.text_area :respond, class: 'form-control', rows: 4 %>
-  </div>
-  <div class="form-group">
-    <%= f.label :status, '対応状況' %>
-    <%= f.select :status, [["未対応", "未対応"], ["対応中", "対応中"], ["完了", "完了"]], class: 'form-control' %>
-  </div>
-  
-  <%= f.submit '保存', class: 'btn btn-primary' %>
-<% end %>
+<div class="p-contact__formBox">
+  <p class="p-contact__formTitle">
+  <%= form_for contact do |f| %>
+    <%= f.hidden_field :building_id %>
+    <div class="form-group">
+      <%= f.label :contact, 'お問い合わせ' %>
+      <%= f.text_field :contact, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :respond, '回答内容' %>
+      <%= f.text_area :respond, class: 'form-control', rows: 4 %>
+    </div>
+    <div class="form-group">
+      <%= f.label :status, '対応状況' %>
+      <%= f.select :status, [["未対応", "未対応"], ["対応中", "対応中"], ["完了", "完了"]], class: 'form-control' %>
+    </div>
+    
+    <%= f.submit '保存', class: 'btn btn-primary' %>
+  <% end %>
+</div>

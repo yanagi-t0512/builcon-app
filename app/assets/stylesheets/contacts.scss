@@ -1,3 +1,15 @@
+.p-contact__formBox {
+  margin: 30px auto;
+  border: 5px solid #e8e8e8;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.p-contact__formTitle {
+  border-bottom: 2px solid #dfdfdf;
+  padding-bottom: 5px;
+}
+
 .contacts__table {
   tr:hover {
     cursor: pointer;
@@ -7,5 +19,30 @@
 .contacts__linkBox {
   a {
     margin: 0 8px;
+  }
+}
+
+.p-contact__listTitle {
+  border-bottom: 2px solid #dfdfdf;
+  padding-bottom: 5px;
+}
+
+.p-contact__list {
+  margin: 38px 0;
+  padding: 20px;
+}
+
+.p-contact__item {
+  padding: 18px;
+  border-bottom: 2px dotted #dfdfdf;
+}
+
+.p-contct__bottomLine {
+  font-size: 15px;
+  text-align: right;
+
+  > span {
+    font-size: 14px;
+    margin: 0 12px;
   }
 }
